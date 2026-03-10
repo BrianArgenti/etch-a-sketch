@@ -1,3 +1,4 @@
+
 function makeGrid(size) {
     let grid = document.querySelector('.grid');
     grid.innerHTML = ''; // Clear current grid
@@ -10,20 +11,19 @@ function makeGrid(size) {
             // row.style.border = `1px solid black`;
             // row.innerText = (i * size) + j;
             column.appendChild(row);
+            row.addEventListener('mouseover', () => {
+                row.style.backgroundColor = 'black';
+            });
         }
-        grid.appendChild(column);
-    }
+        grid.appendChild(column); 
+    }   
 }
-
-// const createSize = document.querySelector('.main-container');
-// const create = document.createElement('button');
-// create.classList.add('create-btn');
-// create.innerText = 'Create!';
-// createSize.appendChild(create);
 
 document.querySelector('.create-btn').addEventListener('click', () =>{
     let size = parseInt(prompt('Enter grid size:'), 10);
     makeGrid(size);
 });
+
+
 
 makeGrid(16);

@@ -57,12 +57,13 @@ body {
     transition: background-color 3s;
 }
 
-.grid > div > div:hover {
+/* .grid > div > div .hovered {
     background-color: #ff0000;
-    transition: background-color 0.003ms;
-}
+    transition: background-color 0.003ms; 
+} */
 
 .grid > div > * {
     flex: 1;
 }
+
 
