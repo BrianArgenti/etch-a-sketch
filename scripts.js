@@ -1,4 +1,6 @@
 
+function randomNum() {return Math.floor(Math.random() * 255);}
+
 function makeGrid(size) {
     let grid = document.querySelector('.grid');
     grid.innerHTML = ''; // Clear current grid
@@ -12,7 +14,7 @@ function makeGrid(size) {
             // row.innerText = (i * size) + j;
             column.appendChild(row);
             row.addEventListener('mouseover', () => {
-                row.style.backgroundColor = 'black';
+                row.style.backgroundColor = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`;
             });
         }
         grid.appendChild(column); 
@@ -21,6 +23,11 @@ function makeGrid(size) {
 
 document.querySelector('.create-btn').addEventListener('click', () =>{
     let size = parseInt(prompt('Enter grid size:'), 10);
+    while ( isNaN(size) || size < 0 || size > 100) {
+        size = parseInt(prompt('Invalid entry, please choose an integer between 1 and 100:'), 10);
+        
+    }
+    console.log(isNaN(size));
     makeGrid(size);
 });
 
